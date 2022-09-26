@@ -92,7 +92,7 @@
           "to": [
             {
               "key_code": "delete_or_backspace",
-              "modifiers": ["left_command"]
+              "modifiers": ["command"]
             }
           ],
           "type": "basic"
@@ -254,7 +254,7 @@
           "to": [
             {
               "key_code": "z",
-              "modifiers": ["left_command"]
+              "modifiers": ["command"]
             }
           ]
         },
@@ -269,19 +269,19 @@
           "to": [
             {
               "key_code": "z",
-              "modifiers": ["left_command", "left_shift"]
+              "modifiers": ["command", "left_shift"]
             }
           ]
         }
       ]
     },
     {
-      "description": "ctrl + ] で enter",
+      "description": "ctrl + m で enter, cmd + m で cmd + enter, option + m で option + enter, cmd + shift + m で shift + enter",
       "manipulators": [
         {
           "type": "basic",
           "from": {
-            "key_code": "backslash",
+            "key_code": "m",
             "modifiers": {
               "mandatory": ["left_control"]
             }
@@ -289,6 +289,67 @@
           "to": [
             {
               "key_code": "return_or_enter"
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "m",
+            "modifiers": {
+              "mandatory": ["command"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "return_or_enter",
+              "modifiers": ["command"]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "m",
+            "modifiers": {
+              "mandatory": ["command"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "return_or_enter",
+              "modifiers": ["command"]
+            }
+          ]
+        },
+
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "m",
+            "modifiers": {
+              "mandatory": ["left_option"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "return_or_enter",
+              "modifiers": ["left_option"]
+            }
+          ]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "m",
+            "modifiers": {
+              "mandatory": ["command", "left_shift"]
+            }
+          },
+          "to": [
+            {
+              "key_code": "return_or_enter",
+              "modifiers": ["left_shift"]
             }
           ]
         }
