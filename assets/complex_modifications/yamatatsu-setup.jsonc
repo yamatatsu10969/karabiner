@@ -1,298 +1,359 @@
 // [Karabiner Elementsの記号対応表 (JIS用、シフト同時押し含む) - Qiita](https://qiita.com/funatsufumiya/items/2d0395c6622468a31b4f)
 // 以下は JIS 用の設定
 {
-  "title": "Yamatatsu-Setup-JIS",
-  "rules": [
-    {
-      "description": "Discode の送信を cmd + enter に変更する",
-      "manipulators": [
+    "title": "Yamatatsu-Setup-JIS",
+    "rules": [
         {
-          "type": "basic",
-          "from": {
-            "key_code": "return_or_enter"
-          },
-          "to": [
-            {
-              "key_code": "return_or_enter",
-              "modifiers": ["left_shift"]
-            }
-          ],
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": ["^com\\.hnc\\.Discord"]
-            }
-          ]
+            "description": "Discode の送信を cmd + enter に変更する",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "return_or_enter"
+                    },
+                    "to": [
+                        {
+                            "key_code": "return_or_enter",
+                            "modifiers": ["left_shift"]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": ["^com\\.hnc\\.Discord"]
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "return_or_enter",
+                        "modifiers": {
+                            "mandatory": ["command"]
+                        }
+                    },
+                    "to": {
+                        "key_code": "return_or_enter"
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": ["^com\\.hnc\\.Discord"]
+                        }
+                    ]
+                }
+            ]
         },
         {
-          "type": "basic",
-          "from": {
-            "key_code": "return_or_enter",
-            "modifiers": {
-              "mandatory": ["command"]
-            }
-          },
-          "to": {
-            "key_code": "return_or_enter"
-          },
-          "conditions": [
-            {
-              "type": "frontmost_application_if",
-              "bundle_identifiers": ["^com\\.hnc\\.Discord"]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "backspace を ctrl + ; , delete を ctrl + : に割り当て",
-      "manipulators": [
-        {
-          "from": {
-            "key_code": "semicolon",
-            "modifiers": {
-              "mandatory": ["left_control"],
-              "optional": ["any"]
-            }
-          },
-          "to": [
-            {
-              "key_code": "delete_or_backspace"
-            }
-          ],
-          "type": "basic"
+            "description": "backspace を ctrl + ; , delete を ctrl + : に割り当て",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "semicolon",
+                        "modifiers": {
+                            "mandatory": ["left_control"],
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "delete_or_backspace"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "quote",
+                        "modifiers": {
+                            "mandatory": ["left_control"],
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "delete_forward"
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
         },
         {
-          "from": {
-            "key_code": "quote",
-            "modifiers": {
-              "mandatory": ["left_control"],
-              "optional": ["any"]
-            }
-          },
-          "to": [
-            {
-              "key_code": "delete_forward"
-            }
-          ],
-          "type": "basic"
-        }
-      ]
-    },
-    {
-      "description": "便利削除コマンド。行頭まで削除を shift + ctrl + semicolon , 行末までの削除を shift + ctrl + quote , ワードごとに削除を ctrl + delete に割り当て",
-      "manipulators": [
-        {
-          "from": {
-            "key_code": "semicolon",
-            "modifiers": {
-              "mandatory": ["left_control", "left_shift"]
-            }
-          },
-          "to": [
-            {
-              "key_code": "delete_or_backspace",
-              "modifiers": ["left_command"]
-            }
-          ],
-          "type": "basic"
+            "description": "便利削除コマンド。行頭まで削除を shift + ctrl + semicolon , 行末までの削除を shift + ctrl + quote , ワードごとに削除を ctrl + delete に割り当て",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "semicolon",
+                        "modifiers": {
+                            "mandatory": ["left_control", "left_shift"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "delete_or_backspace",
+                            "modifiers": ["command"]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "modifiers": {
+                            "mandatory": ["left_control", "left_shift"]
+                        },
+                        "key_code": "quote"
+                    },
+                    "to": [
+                        {
+                            "key_code": "k",
+                            "modifiers": ["left_control"]
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "w",
+                        "modifiers": {
+                            "mandatory": ["left_control"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "delete_or_backspace",
+                            "modifiers": ["left_option"]
+                        }
+                    ]
+                }
+            ]
         },
         {
-          "type": "basic",
-          "from": {
-            "modifiers": {
-              "mandatory": ["left_control", "left_shift"]
-            },
-            "key_code": "quote"
-          },
-          "to": [
-            {
-              "key_code": "k",
-              "modifiers": ["left_control"]
-            }
-          ]
+            "description": "Vim の動作のように、ctrl + hjkl で方向キーで移動できるようにする",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "h",
+                        "modifiers": {
+                            "mandatory": ["left_control"],
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "left_arrow"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "j",
+                        "modifiers": {
+                            "mandatory": ["left_control"],
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "down_arrow"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "k",
+                        "modifiers": {
+                            "mandatory": ["left_control"],
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "up_arrow"
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {
+                    "from": {
+                        "key_code": "l",
+                        "modifiers": {
+                            "mandatory": ["left_control"],
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "right_arrow"
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
         },
         {
-          "type": "basic",
-          "from": {
-            "key_code": "w",
-            "modifiers": {
-              "mandatory": ["left_control"]
-            }
-          },
-          "to": [
-            {
-              "key_code": "delete_or_backspace",
-              "modifiers": ["left_option"]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "Vim の動作のように、ctrl + hjkl で方向キーで移動できるようにする",
-      "manipulators": [
-        {
-          "from": {
-            "key_code": "h",
-            "modifiers": {
-              "mandatory": ["left_control"],
-              "optional": ["any"]
-            }
-          },
-          "to": [
-            {
-              "key_code": "left_arrow"
-            }
-          ],
-          "type": "basic"
+            "description": "ctrl + t を押したときに、英数キーも送信する(VSCode用)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "t",
+                        "modifiers": {
+                            "mandatory": ["left_control"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "t",
+                            "modifiers": ["left_control"]
+                        },
+                        {
+                            "key_code": "japanese_eisuu"
+                        }
+                    ]
+                }
+            ]
         },
         {
-          "from": {
-            "key_code": "j",
-            "modifiers": {
-              "mandatory": ["left_control"],
-              "optional": ["any"]
-            }
-          },
-          "to": [
-            {
-              "key_code": "down_arrow"
-            }
-          ],
-          "type": "basic"
+            "description": "ctrl + t を押したときに、英数キーも送信する(VSCode用)",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "t",
+                        "modifiers": {
+                            "mandatory": ["left_control"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "t",
+                            "modifiers": ["left_control"]
+                        },
+                        {
+                            "key_code": "japanese_eisuu"
+                        }
+                    ]
+                }
+            ]
         },
         {
-          "from": {
-            "key_code": "k",
-            "modifiers": {
-              "mandatory": ["left_control"],
-              "optional": ["any"]
-            }
-          },
-          "to": [
-            {
-              "key_code": "up_arrow"
-            }
-          ],
-          "type": "basic"
+            "description": "ctrl + u で undo, ctrl + shift + u で redo",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "u",
+                        "modifiers": {
+                            "mandatory": ["left_control"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "z",
+                            "modifiers": ["command"]
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "u",
+                        "modifiers": {
+                            "mandatory": ["left_control", "left_shift"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "z",
+                            "modifiers": ["command", "left_shift"]
+                        }
+                    ]
+                }
+            ]
         },
         {
-          "from": {
-            "key_code": "l",
-            "modifiers": {
-              "mandatory": ["left_control"],
-              "optional": ["any"]
-            }
-          },
-          "to": [
-            {
-              "key_code": "right_arrow"
-            }
-          ],
-          "type": "basic"
+            "description": "ctrl + m で enter, cmd + m で cmd + enter, option + m で option + enter, cmd + shift + m で shift + enter",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "m",
+                        "modifiers": {
+                            "mandatory": ["left_control"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "return_or_enter"
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "m",
+                        "modifiers": {
+                            "mandatory": ["command"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "return_or_enter",
+                            "modifiers": ["command"]
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "m",
+                        "modifiers": {
+                            "mandatory": ["command"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "return_or_enter",
+                            "modifiers": ["command"]
+                        }
+                    ]
+                },
+
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "m",
+                        "modifiers": {
+                            "mandatory": ["left_option"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "return_or_enter",
+                            "modifiers": ["left_option"]
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "m",
+                        "modifiers": {
+                            "mandatory": ["command", "left_shift"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "return_or_enter",
+                            "modifiers": ["left_shift"]
+                        }
+                    ]
+                }
+            ]
         }
-      ]
-    },
-    {
-      "description": "ctrl + t を押したときに、英数キーも送信する(VSCode用)",
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "t",
-            "modifiers": {
-              "mandatory": ["left_control"]
-            }
-          },
-          "to": [
-            {
-              "key_code": "t",
-              "modifiers": ["left_control"]
-            },
-            {
-              "key_code": "japanese_eisuu"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "ctrl + t を押したときに、英数キーも送信する(VSCode用)",
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "t",
-            "modifiers": {
-              "mandatory": ["left_control"]
-            }
-          },
-          "to": [
-            {
-              "key_code": "t",
-              "modifiers": ["left_control"]
-            },
-            {
-              "key_code": "japanese_eisuu"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "ctrl + u で undo, ctrl + shift + u で redo",
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "u",
-            "modifiers": {
-              "mandatory": ["left_control"]
-            }
-          },
-          "to": [
-            {
-              "key_code": "z",
-              "modifiers": ["left_command"]
-            }
-          ]
-        },
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "u",
-            "modifiers": {
-              "mandatory": ["left_control", "left_shift"]
-            }
-          },
-          "to": [
-            {
-              "key_code": "z",
-              "modifiers": ["left_command", "left_shift"]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "description": "ctrl + ] で enter",
-      "manipulators": [
-        {
-          "type": "basic",
-          "from": {
-            "key_code": "backslash",
-            "modifiers": {
-              "mandatory": ["left_control"]
-            }
-          },
-          "to": [
-            {
-              "key_code": "return_or_enter"
-            }
-          ]
-        }
-      ]
-    }
-  ]
+    ]
 }
