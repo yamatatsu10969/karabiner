@@ -41,6 +41,25 @@
                             "bundle_identifiers": ["^com\\.hnc\\.Discord"]
                         }
                     ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "m",
+                        "modifiers": {
+                            "mandatory": ["left_control"]
+                        }
+                    },
+                    "to": {
+                        "key_code": "return_or_enter",
+                        "modifiers": ["left_shift"]
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": ["^com\\.hnc\\.Discord"]
+                        }
+                    ]
                 }
             ]
         },
