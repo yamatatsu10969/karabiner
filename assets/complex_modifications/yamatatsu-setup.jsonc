@@ -276,7 +276,7 @@
             ]
         },
         {
-            "description": "ctrl + m で enter, cmd + m で cmd + enter, option + m で option + enter, cmd + shift + m で shift + enter",
+            "description": "ctrl + m で enter, ctrl + shift + m で ctrl + enter, cmd + m で cmd + enter, option + m で option + enter, cmd + shift + m で shift + enter",
             "manipulators": [
                 {
                     "type": "basic",
@@ -292,6 +292,22 @@
                         }
                     ]
                 },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "m",
+                        "modifiers": {
+                            "mandatory": ["left_control", "left_shift"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "return_or_enter",
+                            "modifiers": ["left_control"]
+                        }
+                    ]
+                },
+
                 {
                     "type": "basic",
                     "from": {
