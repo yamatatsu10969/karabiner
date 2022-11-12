@@ -237,29 +237,6 @@
             ]
         },
         {
-            "description": "ctrl + t を押したときに、英数キーも送信する(VSCode用)",
-            "manipulators": [
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "t",
-                        "modifiers": {
-                            "mandatory": ["left_control"]
-                        }
-                    },
-                    "to": [
-                        {
-                            "key_code": "t",
-                            "modifiers": ["left_control"]
-                        },
-                        {
-                            "key_code": "japanese_eisuu"
-                        }
-                    ]
-                }
-            ]
-        },
-        {
             "description": "option + f を押したときに、英数キーも送信する(VSCode用)",
             "manipulators": [
                 {
