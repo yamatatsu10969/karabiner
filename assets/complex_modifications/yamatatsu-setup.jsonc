@@ -260,35 +260,23 @@
             ]
         },
         {
-            "description": "ctrl + u で undo, ctrl + shift + u で redo",
+            "description": "option + f を押したときに、英数キーも送信する(VSCode用)",
             "manipulators": [
                 {
                     "type": "basic",
                     "from": {
-                        "key_code": "u",
+                        "key_code": "f",
                         "modifiers": {
-                            "mandatory": ["left_control"]
+                            "mandatory": ["left_option"]
                         }
                     },
                     "to": [
                         {
-                            "key_code": "z",
-                            "modifiers": ["command"]
-                        }
-                    ]
-                },
-                {
-                    "type": "basic",
-                    "from": {
-                        "key_code": "u",
-                        "modifiers": {
-                            "mandatory": ["left_control", "left_shift"]
-                        }
-                    },
-                    "to": [
+                            "key_code": "f",
+                            "modifiers": ["left_option"]
+                        },
                         {
-                            "key_code": "z",
-                            "modifiers": ["command", "left_shift"]
+                            "key_code": "japanese_eisuu"
                         }
                     ]
                 }
