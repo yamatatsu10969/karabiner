@@ -414,6 +414,32 @@
                     ]
                 }
             ]
+        },
+        {
+            "description": "TypingMind で cmd + option + N を cmd + N に変更する",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "n",
+                        "modifiers": {
+                            "mandatory": ["command", "left_option"]
+                        }
+                    },
+                    "to": {
+                        "key_code": "n",
+                        "modifiers": ["command"]
+                    },
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.devuap\\.Typing-Mind-setapp"
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ]
 }

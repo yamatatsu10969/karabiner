@@ -18,6 +18,37 @@
                 },
                 "rules": [
                     {
+                        "description": "TypingMind で cmd + option + N を cmd + N に変更する",
+                        "manipulators": [
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.devuap\\.Typing-Mind-setapp"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "n",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "command",
+                                            "left_option"
+                                        ]
+                                    }
+                                },
+                                "to": {
+                                    "key_code": "n",
+                                    "modifiers": [
+                                        "command"
+                                    ]
+                                },
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "Mattermost の送信を Cmd + Enter に変更する",
                         "manipulators": [
                             {
