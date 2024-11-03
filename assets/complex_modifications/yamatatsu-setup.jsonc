@@ -159,6 +159,26 @@
             ]
         },
         {
+            "description": "ctrl + p を - に変更する",
+            "manipulators": [
+                {
+                    "from": {
+                        "key_code": "p",
+                        "modifiers": {
+                            "mandatory": ["left_control"],
+                            "optional": ["any"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "-"
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
             "description": "便利削除コマンド。行頭まで削除を shift + ctrl + semicolon , 行末までの削除を shift + ctrl + quote , ワードごとに削除を ctrl + delete に割り当て",
             "manipulators": [
                 {
