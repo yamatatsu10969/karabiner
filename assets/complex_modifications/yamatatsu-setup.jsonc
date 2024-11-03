@@ -165,13 +165,12 @@
                     "from": {
                         "key_code": "p",
                         "modifiers": {
-                            "mandatory": ["left_control"],
-                            "optional": ["any"]
+                            "mandatory": ["left_control"]
                         }
                     },
                     "to": [
                         {
-                            "key_code": "-"
+                            "key_code": "hyphen"
                         }
                     ],
                     "type": "basic"
