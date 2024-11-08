@@ -28,7 +28,6 @@
                                         }
                                     }
                                 ],
-                                "to_if_alone": [{ "key_code": "japanese_eisuu" }],
                                 "type": "basic"
                             },
                             {
@@ -207,7 +206,6 @@
                                         }
                                     }
                                 ],
-                                "to_if_alone": [{ "key_code": "japanese_kana" }],
                                 "type": "basic"
                             },
                             {
@@ -386,7 +384,6 @@
                                         }
                                     }
                                 ],
-                                "to_if_alone": [{ "key_code": "japanese_eisuu" }],
                                 "type": "basic"
                             },
                             {
@@ -560,7 +557,6 @@
                                         }
                                     }
                                 ],
-                                "to_if_alone": [{ "key_code": "japanese_kana" }],
                                 "type": "basic"
                             },
                             {

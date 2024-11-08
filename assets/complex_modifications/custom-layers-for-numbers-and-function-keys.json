@@ -32,11 +32,6 @@
                                 "value": 0
                             }
                         }
-                    ],
-                    "to_if_alone": [
-                        {
-                            "key_code": "japanese_eisuu"
-                        }
                     ]
                 },
                 {
@@ -290,11 +285,6 @@
                                 "name": "layer_kana_active",
                                 "value": 0
                             }
-                        }
-                    ],
-                    "to_if_alone": [
-                        {
-                            "key_code": "japanese_kana"
                         }
                     ]
                 },
@@ -550,11 +540,6 @@
                                 "value": 0
                             }
                         }
-                    ],
-                    "to_if_alone": [
-                        {
-                            "key_code": "japanese_eisuu"
-                        }
                     ]
                 },
                 {
@@ -805,11 +790,6 @@
                                 "name": "layer_kana_active",
                                 "value": 0
                             }
-                        }
-                    ],
-                    "to_if_alone": [
-                        {
-                            "key_code": "japanese_kana"
                         }
                     ]
                 },
