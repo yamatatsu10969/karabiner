@@ -182,7 +182,7 @@
                         ]
                     },
                     {
-                        "description": "かなきーで数字入力レイヤーを作成（ASDFGHJKL等に数字を割り当て）",
+                        "description": "かなきーで数字入力レイヤー+シフトキーを作成（ASDFGHJKLの箇所）",
                         "manipulators": [
                             {
                                 "from": {
@@ -217,7 +217,12 @@
                                     }
                                 ],
                                 "from": { "key_code": "a" },
-                                "to": [{ "key_code": "1" }],
+                                "to": [
+                                    {
+                                        "key_code": "1",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -229,7 +234,12 @@
                                     }
                                 ],
                                 "from": { "key_code": "s" },
-                                "to": [{ "key_code": "2" }],
+                                "to": [
+                                    {
+                                        "key_code": "2",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -241,7 +251,12 @@
                                     }
                                 ],
                                 "from": { "key_code": "d" },
-                                "to": [{ "key_code": "3" }],
+                                "to": [
+                                    {
+                                        "key_code": "3",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -253,7 +268,12 @@
                                     }
                                 ],
                                 "from": { "key_code": "f" },
-                                "to": [{ "key_code": "4" }],
+                                "to": [
+                                    {
+                                        "key_code": "4",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -265,7 +285,12 @@
                                     }
                                 ],
                                 "from": { "key_code": "g" },
-                                "to": [{ "key_code": "5" }],
+                                "to": [
+                                    {
+                                        "key_code": "5",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -277,7 +302,12 @@
                                     }
                                 ],
                                 "from": { "key_code": "h" },
-                                "to": [{ "key_code": "6" }],
+                                "to": [
+                                    {
+                                        "key_code": "6",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -289,7 +319,12 @@
                                     }
                                 ],
                                 "from": { "key_code": "j" },
-                                "to": [{ "key_code": "7" }],
+                                "to": [
+                                    {
+                                        "key_code": "7",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -301,7 +336,12 @@
                                     }
                                 ],
                                 "from": { "key_code": "k" },
-                                "to": [{ "key_code": "8" }],
+                                "to": [
+                                    {
+                                        "key_code": "8",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -313,7 +353,12 @@
                                     }
                                 ],
                                 "from": { "key_code": "l" },
-                                "to": [{ "key_code": "9" }],
+                                "to": [
+                                    {
+                                        "key_code": "9",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -325,7 +370,7 @@
                                     }
                                 ],
                                 "from": { "key_code": "semicolon" },
-                                "to": [{ "key_code": "0" }],
+                                "to": [{ "key_code": "hyphen" }],
                                 "type": "basic"
                             },
                             {
@@ -337,7 +382,12 @@
                                     }
                                 ],
                                 "from": { "key_code": "quote" },
-                                "to": [{ "key_code": "hyphen" }],
+                                "to": [
+                                    {
+                                        "key_code": "hyphen",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
                                 "type": "basic"
                             },
                             {
@@ -766,6 +816,205 @@
                         ]
                     },
                     {
+                        "description": "英数キーで数字入力レイヤー+シフトキーを作成（ZXCVBNMの箇所）",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "japanese_eisuu",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [
+                                    {
+                                        "set_variable": {
+                                            "name": "layer_eisuu_active",
+                                            "value": 1
+                                        }
+                                    },
+                                    { "key_code": "japanese_eisuu" }
+                                ],
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "layer_eisuu_active",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "layer_eisuu_active",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "key_code": "z" },
+                                "to": [
+                                    {
+                                        "key_code": "1",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "layer_eisuu_active",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "key_code": "x" },
+                                "to": [
+                                    {
+                                        "key_code": "2",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "layer_eisuu_active",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "key_code": "c" },
+                                "to": [
+                                    {
+                                        "key_code": "3",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "layer_eisuu_active",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "key_code": "v" },
+                                "to": [
+                                    {
+                                        "key_code": "4",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "layer_eisuu_active",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "key_code": "b" },
+                                "to": [
+                                    {
+                                        "key_code": "5",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "layer_eisuu_active",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "key_code": "n" },
+                                "to": [
+                                    {
+                                        "key_code": "6",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "layer_eisuu_active",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "key_code": "m" },
+                                "to": [
+                                    {
+                                        "key_code": "7",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "layer_eisuu_active",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "key_code": "comma" },
+                                "to": [
+                                    {
+                                        "key_code": "8",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "layer_eisuu_active",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "key_code": "period" },
+                                "to": [
+                                    {
+                                        "key_code": "9",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "layer_eisuu_active",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": { "key_code": ",slash" },
+                                "to": [
+                                    {
+                                        "key_code": "0",
+                                        "modifiers": ["shift"]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "ctrl + p を - に変更する",
                         "manipulators": [
                             {
@@ -943,50 +1192,6 @@
                         ]
                     },
                     {
-                        "description": "便利削除コマンド。行頭まで削除を shift + ctrl + semicolon , 行末までの削除を shift + ctrl + quote , ワードごとに削除を ctrl + delete に割り当て",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "semicolon",
-                                    "modifiers": { "mandatory": ["left_control", "left_shift"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "delete_or_backspace",
-                                        "modifiers": ["left_command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "quote",
-                                    "modifiers": { "mandatory": ["left_control", "left_shift"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "k",
-                                        "modifiers": ["left_control"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "w",
-                                    "modifiers": { "mandatory": ["left_control"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "delete_or_backspace",
-                                        "modifiers": ["left_option"]
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Vim の動作のように、ctrl + hjkl で方向キーで移動できるようにする",
                         "manipulators": [
                             {
@@ -1031,6 +1236,57 @@
                                     }
                                 },
                                 "to": [{ "key_code": "right_arrow" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "便利削除コマンド。行頭まで削除を shift + ctrl + semicolon , 行末までの削除を shift + ctrl + quote , ワードごとに削除を ctrl + w, ctrl + q に割り当て",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "semicolon",
+                                    "modifiers": { "mandatory": ["left_control", "left_shift"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": ["command"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "quote",
+                                    "modifiers": { "mandatory": ["left_control", "left_shift"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "k",
+                                        "modifiers": ["left_control"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "w",
+                                    "modifiers": { "mandatory": ["left_control"] }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": ["left_option"]
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "q",
+                                    "modifiers": { "mandatory": ["left_control"] }
+                                },
                                 "type": "basic"
                             }
                         ]

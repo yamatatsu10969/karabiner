@@ -216,7 +216,7 @@
             ]
         },
         {
-            "description": "便利削除コマンド。行頭まで削除を shift + ctrl + semicolon , 行末までの削除を shift + ctrl + quote , ワードごとに削除を ctrl + delete に割り当て",
+            "description": "便利削除コマンド。行頭まで削除を shift + ctrl + semicolon , 行末までの削除を shift + ctrl + quote , ワードごとに削除を ctrl + w, ctrl + q に割り当て",
             "manipulators": [
                 {
                     "from": {
@@ -276,6 +276,17 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "q",
+                        "modifiers": {
+                            "mandatory": [
+                                "left_control"
+                            ]
+                        }
+                    }
                 }
             ]
         },
