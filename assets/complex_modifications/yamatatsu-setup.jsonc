@@ -603,6 +603,25 @@
                     ]
                 }
             ]
+        },
+        {
+            "description": "right cmd + e を esc に変更する",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "e",
+                        "modifiers": {
+                            "mandatory": [
+                                "right_command"
+                            ]
+                        }
+                    },
+                    "to": {
+                        "key_code": "escape"
+                    }
+                }
+            ]
         }
     ]
 }
