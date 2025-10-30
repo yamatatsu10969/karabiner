@@ -4,11 +4,11 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Optionキーを押しながら数字入力レイヤーを有効にする（0はNキー）",
+                        "description": "英数キーを押しながら数字入力レイヤーを有効にする（0はNキー）",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "left_option",
+                                    "key_code": "japanese_eisuu",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
@@ -27,7 +27,22 @@
                                         }
                                     }
                                 ],
-                                "to_if_alone": [{ "key_code": "left_option" }],
+                                "to_if_alone": [{ "key_code": "japanese_eisuu" }],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "num_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "y",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [],
                                 "type": "basic"
                             },
                             {
@@ -87,7 +102,22 @@
                                     "key_code": "p",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "key_code": "keypad_plus" }],
+                                "to": [],
+                                "type": "basic"
+                            },
+                            {
+                                "conditions": [
+                                    {
+                                        "name": "num_layer",
+                                        "type": "variable_if",
+                                        "value": 1
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [],
                                 "type": "basic"
                             },
                             {
@@ -147,7 +177,7 @@
                                     "key_code": "semicolon",
                                     "modifiers": { "optional": ["any"] }
                                 },
-                                "to": [{ "key_code": "keypad_hyphen" }],
+                                "to": [{ "key_code": "delete_or_backspace" }],
                                 "type": "basic"
                             },
                             {
@@ -223,184 +253,6 @@
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [{ "key_code": "keypad_0" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "英数キーで数字入力レイヤーを作成（ASDFGHJKL等に数字を割り当て）",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "japanese_eisuu",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "set_variable": {
-                                            "name": "layer_eisuu_active",
-                                            "value": 1
-                                        }
-                                    },
-                                    { "key_code": "japanese_eisuu" }
-                                ],
-                                "to_after_key_up": [
-                                    {
-                                        "set_variable": {
-                                            "name": "layer_eisuu_active",
-                                            "value": 0
-                                        }
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "layer_eisuu_active",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": { "key_code": "a" },
-                                "to": [{ "key_code": "1" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "layer_eisuu_active",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": { "key_code": "s" },
-                                "to": [{ "key_code": "2" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "layer_eisuu_active",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": { "key_code": "d" },
-                                "to": [{ "key_code": "3" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "layer_eisuu_active",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": { "key_code": "f" },
-                                "to": [{ "key_code": "4" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "layer_eisuu_active",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": { "key_code": "g" },
-                                "to": [{ "key_code": "5" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "layer_eisuu_active",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": { "key_code": "h" },
-                                "to": [{ "key_code": "6" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "layer_eisuu_active",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": { "key_code": "j" },
-                                "to": [{ "key_code": "7" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "layer_eisuu_active",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": { "key_code": "k" },
-                                "to": [{ "key_code": "8" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "layer_eisuu_active",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": { "key_code": "l" },
-                                "to": [{ "key_code": "9" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "layer_eisuu_active",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": { "key_code": "semicolon" },
-                                "to": [{ "key_code": "0" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "layer_eisuu_active",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": { "key_code": "quote" },
-                                "to": [{ "key_code": "hyphen" }],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "name": "layer_eisuu_active",
-                                        "type": "variable_if",
-                                        "value": 1
-                                    }
-                                ],
-                                "from": { "key_code": "backslash" },
-                                "to": [
-                                    {
-                                        "key_code": "equal_sign",
-                                        "modifiers": ["shift"]
-                                    }
-                                ],
                                 "type": "basic"
                             }
                         ]
