@@ -5,6 +5,7 @@
                 "rules": [
                     {
                         "description": "かなキーを押しながらasdfghjklをファンクションキーレイヤーに割り当てる",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
