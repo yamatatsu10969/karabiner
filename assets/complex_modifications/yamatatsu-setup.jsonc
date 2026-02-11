@@ -78,7 +78,7 @@
             ]
         },
         {
-            "description": "Discode の送信を cmd + enter に変更する",
+            "description": "Discord の送信を cmd + enter に変更する (Raycast除外)",
             "manipulators": [
                 {
                     "type": "basic",
@@ -98,6 +98,12 @@
                             "type": "frontmost_application_if",
                             "bundle_identifiers": [
                                 "^com\\.hnc\\.Discord"
+                            ]
+                        },
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "^com\\.raycast\\.macosx$"
                             ]
                         }
                     ]
